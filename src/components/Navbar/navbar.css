@@ -1,0 +1,9 @@
+.navbar {
+  background-color: 'gray';
+  top: '0px'; 
+  width: 100%;
+}
+
+.right {
+  float: right;
+}
