@@ -61,6 +61,7 @@ module.exports = {
       ext: 'js,json,jsx,tsx,ts',
       script: './devServer.js',
       delay: 0,
+      ignore: ['src/components'],
     }),
   ],
   resolve: {

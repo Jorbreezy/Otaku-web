@@ -1,5 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
+const { HotModuleReplacementPlugin } = require('webpack');
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
@@ -25,7 +27,7 @@ module.exports = {
     headers: { 'Access-Control-Allow-Origin': '*' },
     disableHostCheck: true,
     contentBase: path.join(__dirname, `../${assetsPath}`),
-    hot: true,
+    hotOnly: true,
     port: 3001,
     host: '0.0.0.0',
   },
@@ -64,6 +66,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       chunkFilename: '[id].css',
