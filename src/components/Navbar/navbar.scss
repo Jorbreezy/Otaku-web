@@ -7,9 +7,12 @@
   background-color: $color-blue;
   top: 0px; 
   width: 100%;
+  box-sizing: border-box;
 }
 
 .right {
+  vertical-align: middle;
+
   li {
     display: inline;
   }
