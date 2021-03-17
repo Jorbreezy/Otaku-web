@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-import Navbar from './components/Navbar/Navbar';
+import Navbar from 'components/Navbar/Navbar';
 
 class App extends PureComponent<any, any> {
   render() {

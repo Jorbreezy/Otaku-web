@@ -33,6 +33,15 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
         moduleDirectory: ['node_modules', 'src/'],
       },
+      'import/resolver': {
+        alias: {
+          map: [
+            ['react'],
+            ['react-dom'],
+          ],
+          extensions: ['.js', '.jsx', '.json'],
+        },
+      },
     },
   },
 };

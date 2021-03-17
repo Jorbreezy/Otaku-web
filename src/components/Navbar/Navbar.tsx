@@ -1,10 +1,12 @@
 import React from 'react';
 
-import './navbar.css';
+import './navbar.scss';
 
 const Navbar = () => (
   <header className="navbar">
-    <h1>Otaku World</h1>
+    <div className="title">
+      <h1>Otaku World</h1>
+    </div>
     <section className="right">
       <ul>
         <li>Discovery</li>

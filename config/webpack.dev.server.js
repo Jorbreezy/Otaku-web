@@ -7,6 +7,7 @@ const nodeExternals = require('webpack-node-externals');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const rootPath = path.resolve(__dirname, '../');
+const rootProjectDir = path.resolve(__dirname, '../');
 
 module.exports = {
   mode: 'development',
@@ -36,6 +37,7 @@ module.exports = {
             options: {
               modules: {
                 localIdentName: '[folder]-[local]--[hash:base64:5]',
+                exportOnlyLocals: true,
               },
             },
           },
@@ -66,5 +68,6 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.jsx', '.tsx', '.js', '.ts', '.css', '.scss'],
+    modules: [path.resolve(rootProjectDir, 'src'), 'node_modules'],
   },
 };

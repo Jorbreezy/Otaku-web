@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
 
+const rootProjectDir = path.resolve(__dirname, '../');
 const rootPath = 'src';
 const assetsPath = 'static/dist';
 
@@ -76,5 +77,6 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.jsx', '.tsx', '.js', '.ts', '.css', '.scss'],
+    modules: [path.resolve(rootProjectDir, 'src'), 'node_modules'],
   },
 };
