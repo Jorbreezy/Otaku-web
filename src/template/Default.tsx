@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Default = ({ assets, content }) => (
   <html lang="en">
@@ -24,5 +25,15 @@ const Default = ({ assets, content }) => (
     </body>
   </html>
 );
+
+Default.propTypes = {
+  assets: PropTypes.shape({
+    main: PropTypes.shape({
+      css: PropTypes.string,
+      js: PropTypes.string,
+    }),
+  }).isRequired,
+  content: PropTypes.element.isRequired,
+};
 
 export default Default;
