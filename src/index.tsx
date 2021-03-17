@@ -1,13 +1,21 @@
 import express, { Request, Response } from 'express';
+import morgan from 'morgan';
+import helmet from 'helmet';
+
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 
-import App from './App';
-import Default from './template/Default';
+import App from 'App';
+import Default from 'template/Default';
+import logger from 'utils/logger';
+
 import Assets from '../static/dist/webpack-assets.json';
 
 const app = express();
 const PORT = 3000;
+
+app.use(morgan('dev'));
+app.use(helmet());
 
 app.get('*', (req: Request, res: Response) => {
   const props = {
@@ -22,5 +30,5 @@ app.get('*', (req: Request, res: Response) => {
 });
 
 app.listen(PORT, () => {
-  console.log('Listening on PORT: ', PORT);
+  logger.info(`Running on port: ${PORT}`);
 });
